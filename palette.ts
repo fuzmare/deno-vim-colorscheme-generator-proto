@@ -14,8 +14,8 @@ function lightPalette(palette: LCHPalette): LCHPalette {
   return Object.keys(palette).reduce((newPalette, colorKey) => {
     const key = colorKey as keyof typeof palette;
     newPalette[key] = {
-      l: palette[key].l + 12,
-      c: palette[key].c * 0.85,
+      l: palette[key].l + 8,
+      c: palette[key].c * 0.9,
       h: palette[key].h
     };
     return newPalette;
@@ -37,24 +37,24 @@ const bgLCH: LCHColor = {
 }
 export const bgHEX = lchToHex(bgLCH);
 
-const baseL = 58
+const baseL = 62
 const baseC = 38
 
 const stdPaletteLCH: LCHPalette = {
-  r: { l: baseL - 8, c: baseC + 35, h:   0 + 10 },
+  r: { l: baseL - 8, c: baseC + 25, h:   0 + 10 },
   o: { l: baseL + 4, c: baseC +  7, h:  30 + 10 },
   y: { l: baseL + 9, c: baseC +  4, h:  60 + 15 },
   g: { l: baseL + 7, c: baseC +  5, h: 120 + 40 },
   c: { l: baseL + 7, c: baseC +  5, h: 180 + 25 },
   b: { l: baseL + 7, c: baseC +  5, h: 240 + 35 },
   m: { l: baseL + 4, c: baseC +  7, h: 300 + 10 },
-  p: { l: baseL + 4, c: baseC +  7, h: 330 + 10 },
+  p: { l: baseL + 4, c: baseC + 12, h: 330 + 10 },
 }
 
 const paletteLCH: LCHPaletteSet = {
   std: stdPaletteLCH,
   light: lightPalette(stdPaletteLCH),
-  bg: bgPalette(stdPaletteLCH, bgLCH, 2, 0.5),
+  bg: bgPalette(stdPaletteLCH, bgLCH, 1.2, 0.6),
   bgWeaker: bgPalette(stdPaletteLCH, bgLCH, 2, 0.9)
 }
 
