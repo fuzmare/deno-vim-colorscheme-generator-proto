@@ -142,3 +142,24 @@ hi("GitSignsDelete", p.std.r, NONE)
 
 //Tofu (for cmdline cursor)
 hi("CmdlineCursor", g[0], g[15])
+
+console.log(
+`if has('nvim')
+  let g:terminal_color_0  = '${g[3]}'
+  let g:terminal_color_1  = '${p.std.r}'
+  let g:terminal_color_2  = '${p.std.g}'
+  let g:terminal_color_3  = '${p.std.y}'
+  let g:terminal_color_4  = '${p.std.b}'
+  let g:terminal_color_5  = '${p.std.m}'
+  let g:terminal_color_6  = '${p.std.c}'
+  let g:terminal_color_7  = '${g[13]}'
+  let g:terminal_color_8  = '${g[4]}'
+  let g:terminal_color_9  = '${p.light.r}'
+  let g:terminal_color_10 = '${p.light.g}'
+  let g:terminal_color_11 = '${p.light.y}'
+  let g:terminal_color_12 = '${p.light.b}'
+  let g:terminal_color_13 = '${p.light.m}'
+  let g:terminal_color_14 = '${p.light.c}'
+  let g:terminal_color_15 = '${g[15]}'
+endif`
+)
